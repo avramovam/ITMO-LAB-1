@@ -16,7 +16,7 @@ public class Main {
     }
     public static double func2(Double args) {
         double x = args;
-        return (cos(toRadians(log(pow(tan(toRadians(x)), 2)))));
+        return asin(cos(toRadians(log(pow(tan(toRadians(x)), 2)))));
     }
     public static double func3(Double args) {
         double x = args;
