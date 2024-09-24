@@ -40,27 +40,21 @@ public class Main {
             for (int j = 0; j < 10; j++) {
                 if (w[i] == 14) {
                     s[i][j] = func1(x[j]);
-
-                } else if (cheker(w[j])) {
+                } else if (cheker(w[i])) {
                     s[i][j] = func2(x[j]);
-
                 } else {
                     s[i][j] = func3(x[j]);
                 }
-
             }
         }
-        for (double[] doubles : s) {
-            for (int j = 0; j < doubles.length; j++) {
-                String X = String.format("%.4f", doubles[j]);
-                if (j == doubles.length - 1) {
-                    System.out.print(X + "\n");
-                } else {
-                    System.out.print(X + " ");
+        for (int i = 0; i < s.length; i++) {
+            for (int j = 0; j < s[i].length; j++) {
+                String res = String.format("%6.4f", s[i][j]);
+                System.out.print(res);
+                System.out.print(" ");
                 }
-
+            System.out.println();
             }
         }
     }
 
-}
