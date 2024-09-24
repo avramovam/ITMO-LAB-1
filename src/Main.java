@@ -10,6 +10,21 @@ public class Main {
         }
         return false;
     }
+    public static double func1(Double args) {
+        double x = args;
+        return pow(0.5 / (pow(x, ((x / (x + 3)) * sin(toRadians(x)))) + 1), 3);
+    }
+    public static double func2(Double args) {
+        double x = args;
+        return (cos(toRadians(log(pow(tan(toRadians(x)), 2)))));
+    }
+    public static double func3(Double args) {
+        double x = args;
+        double n = (2 / pow(E, pow(x, x)));
+        double l = cos(toRadians(pow((2 - x), 2)));
+        double r = pow(n, l);
+        return pow(pow((asin(1 / pow(E, abs(x))) + 1) / PI, 3) * 2, r);
+    }
     public static void main(String[] args) {
         int[] w = new int[16];
         double[] x = new double[10];
@@ -24,31 +39,27 @@ public class Main {
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 10; j++) {
                 if (w[i] == 14) {
-                    s[i][j] = pow(0.5 / (pow(x[j], ((x[j] / (x[j] + 3)) * sin(toRadians(x[j])))) + 1), 3);
+                    s[i][j] = func1(x[j]);
 
                 } else if (cheker(w[j])) {
-                    double e = E;
-                    s[i][j] = asin(cos(toRadians(log(pow(tan(toRadians(x[j])), 2)))));
+                    s[i][j] = func2(x[j]);
 
                 } else {
-                    double n = (2 / pow(E, pow(x[j], x[j])));
-                    double l = cos(toRadians(pow((2 - x[j]), 2)));
-                    double r = pow(n, l);
-                    s[i][j] = pow(pow((asin(1 / pow(E, abs(x[j]))) + 1) / PI, 3) * 2, r);
+                    s[i][j] = func3(x[j]);
                 }
 
             }
         }
-        for (int i = 0; i < s.length; i++) {
-            for (int j = 0; j < s[i].length; j++) {
-                String X = String.format("%.4f", s[i][j]);
-                if (j == s[i].length - 1) {
+        for (double[] doubles : s) {
+            for (int j = 0; j < doubles.length; j++) {
+                String X = String.format("%.4f", doubles[j]);
+                if (j == doubles.length - 1) {
                     System.out.print(X + "\n");
                 } else {
                     System.out.print(X + " ");
                 }
 
-            };
+            }
         }
     }
 
